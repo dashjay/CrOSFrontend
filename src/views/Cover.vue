@@ -10,7 +10,7 @@
       </flexbox-item>
       <flexbox-item>
         <div class="flex-demo right">
-          <x-button type="primary" @click.native="reserve">借教室</x-button>
+          <x-button type="primary" @click.native="login">登录</x-button>
         </div>
       </flexbox-item>
     </flexbox>
@@ -23,7 +23,7 @@
     export default {
         name: "COVER",
         methods: {
-            reserve() {
+            login() {
                 this.$router.push("/login")
             }
         },

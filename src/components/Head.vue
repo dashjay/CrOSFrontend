@@ -27,15 +27,16 @@ export default {
       },
     };
   },
-  created(){
+  created() {
     let jwt = localStorage.getItem("jwt");
-    if(jwt){
+    if (jwt) {
       console.log(jwt);
-      this.showBack=true;
-      this.title="用户信息",
-      this.backText="注销",
+      this.showBack = true;
+      this.title = "用户信息";
+      this.backText = "注销";
       this.pgb = true;
     }
+    this.setheader(this.$route);
   },
   methods: {
     setheader(route) {
@@ -43,11 +44,6 @@ export default {
       this.title = route.meta.title;
       this.backText = route.meta.backText;
       this.pgb = route.meta.pgb;
-
-      if (this.$route.path === "/selection_room") {
-        this.title =
-          this.collegeList[this.$route.query.college_id] + " | " + this.title;
-      }
     },
     logout() {
       //注销逻辑
@@ -76,6 +72,7 @@ export default {
   watch: {
     $route() {
       this.setheader(this.$route);
+
       switch (this.$route.path) {
         case "/": {
           break;

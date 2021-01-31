@@ -59,10 +59,11 @@ export default {
             this.$vux.toast.show({
               text: "登录成功",
             });
+
             this.$router.push("/user_info");
           } else {
             this.$vux.toast.show({
-              text: "登陆失败",
+              text: data.error,
               type: "warn",
             });
           }

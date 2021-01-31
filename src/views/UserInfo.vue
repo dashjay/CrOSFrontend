@@ -1,17 +1,18 @@
 <template>
   <div>
-    <card :header="{ title: '用户信息' }" :footer="{ title: '可借教室: 0' }">
+    <card :header="{ title: '用户信息' }">
       <p slot="content" class="card-padding">
         <cell title="用户名:" :value="Name"></cell>
-        <!-- <cell title="学院:" value="计通学院"></cell> -->
-        <!-- <cell title="认证:" value="教师"></cell> -->
       </p>
     </card>
 
-    <flexbox class="flex-container cover-button">
+    <flexbox
+      class="flex-container cover-button"
+      style="padding-top: 10px; padding-bottom: 20px"
+    >
       <flexbox-item>
         <div class="flex-demo left">
-          <x-button type="primary">查看空教室</x-button>
+          <x-button type="disabled" style="color: grey">查看空教室</x-button>
         </div>
       </flexbox-item>
       <flexbox-item>
@@ -21,33 +22,24 @@
       </flexbox-item>
     </flexbox>
 
-
-
     <card :header="{ title: '已定教室' }">
-
-       <div
-        slot="content"
-        class="card-flex card-demo-content01"
-      >
+      <div slot="content" class="card-flex card-demo-content01">
         <div class="vux-1px-r">
           {{ "房间名" }}
           <br />
-          
         </div>
         <div class="vux-1px-r">
           {{ "日期时间" }}
           <br />
-          
         </div>
 
-          <div class="vux-1px-r">
+        <div class="vux-1px-r">
           {{ "状态" }}
           <br />
-          
         </div>
-    
+
         <div class="vux-1px-r">
-          {{ '操作'}}
+          {{ "操作" }}
         </div>
       </div>
 
@@ -63,20 +55,18 @@
         </div>
         <div class="vux-1px-r">
           <br />
-          <span>{{ item.date }} <br/>{{ item.time }}</span>
+          <span>{{ item.date }} <br />{{ item.time }}</span>
         </div>
-     
-      <div class="vux-1px-r">
+
+        <div class="vux-1px-r">
           <br />
-          <span>{{status_detail[item.status]}}</span>
+          <span>{{ status_detail[item.status] }}</span>
         </div>
-     
 
         <div class="vux-1px-r" style="padding-top: 10px">
-        
           <x-button
             :type="ButtonColor(item.status)"
-            style="width: 70px; height: 30px; color: black; font-size: 10px; "
+            style="width: 70px; height: 30px; color: black; font-size: 10px"
             :data-record_id="item.id"
             @click.native="refund(item.id, item.status)"
             >{{ ButtonText(item.status) }}
@@ -114,32 +104,7 @@ export default {
       classroomId: "",
       showRefund: false,
       Lending: true,
-      lengdingList: [
-        {
-          _id: "6000117486f55952a9710046",
-          classroom_id: "60000eaf86f5595041783065",
-          day: 14,
-          end: 2,
-          month: 1,
-          room_name: "806",
-          start: 1,
-          status: 2,
-          uid: "5ffeba1f421aa92bf073ba0f",
-          year: 2021,
-        },
-        {
-          _id: "600013d386f55952f918ec80",
-          classroom_id: "60000eaf86f5595041783065",
-          day: 14,
-          end: 4,
-          month: 1,
-          room_name: "806",
-          start: 3,
-          status: 1,
-          uid: "5ffeba1f421aa92bf073ba0f",
-          year: 2021,
-        },
-      ],
+      lengdingList: [],
       lendinfo: [],
     };
   },
