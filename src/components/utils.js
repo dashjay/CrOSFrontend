@@ -33,9 +33,9 @@ export function nowTime2Str() {
 
   return today.getFullYear() +
     "-" +
-    parse(today.getUTCMonth() + 1) +
+    parse(today.getMonth() + 1) +
     "-" +
-    parse(today.getUTCDate());
+    parse(today.getDate());
 }
 
 export function str2TimeDict(timeStr){
