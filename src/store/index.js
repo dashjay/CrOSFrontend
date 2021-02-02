@@ -13,7 +13,8 @@ const store = new Vuex.Store({
       status_valid: 1,
       status_cancelled: 2
     },
-    status_detail: { 0: '未审核', 1: '已通过', 2: '已取消' }
+    status_detail: { 0: '未审核', 1: '已通过', 2: '已取消' },
+    status_color: { 0: 'grey', 1: 'green', 2: 'red' }
   },
   mutations: {
     updateInfo(state, payload) {

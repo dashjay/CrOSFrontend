@@ -67,5 +67,6 @@
   }
   .cover-button{
     margin-top:200px;
+    margin-bottom: 30px;
   }
 </style>
