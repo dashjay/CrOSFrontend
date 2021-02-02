@@ -15,7 +15,9 @@ export default {
       locale: "en",
     };
   },
-  created() {},
+  created() {
+    
+  },
   watch: {},
   components: {
     Head,
@@ -27,5 +29,11 @@ export default {
 
 body {
   background-color: #ffffff;
+}
+
+html,
+body {
+  overflow: hidden;
+  overflow-y: auto;
 }
 </style>
